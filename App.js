@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import Kotak from './components/kotak'; 
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.text}>Tugas pertemuan 2 praktikum dpm</Text>
+
+      <View style={styles.boxContainer}>
+        <Kotak warna="grey" />
+        <Kotak warna="red" /> 
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center', 
+    backgroundColor: '#D3D3D3', 
+  },
+  text: {
+    fontSize: 24,
+    color: 'blue',
+    fontWeight: 'bold',
+  },
+  boxContainer: {
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    width: '100%',
+    paddingHorizontal: 20,
   },
 });
+export default App;
